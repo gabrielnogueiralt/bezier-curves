@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<title>Bezier, the Blessing</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
+        <h3 class="w3-bar-item">GERENCIAR CURVAS</h3>
+        <li class="list-group-item">
+            <div class="btn-group" role="group" aria-label="Basic mixed styles example" style="width: 100%;">
+                <button id="btn-delete-curve" type="button" class="btn btn-danger">remover</button>
+                <button id="btn-create-curve" type="button" class="btn btn-success">adicionar</button>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div class="btn-group" role="group" aria-label="Basic outlined example" style="width: 100%;">
+                <button id="btn-previous-curve" type="button" class="btn btn-outline-primary">anterior</button>
+                <button id="btn-next-curve" type="button" class="btn btn-outline-primary">próximo</button>
+            </div>
+        </li>
+
+        <h3 class="w3-bar-item">GERENCIAR PONTOS</h3>
+        <li class="list-group-item">
+            <div class="btn-group" role="group" aria-label="Basic mixed styles example" style="width: 100%;">
+                <button id="btn-delete-point" type="button" class="btn btn-danger">remover</button>
+                <button id="btn-edit-point" type="button" class="btn btn-warning">editar</button>
+                <button id="btn-create-point" type="button" class="btn btn-success">adicionar</button>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div class="btn-group" role="group" aria-label="Basic outlined example" style="width: 100%;">
+                <button id="btn-previous-point" type="button" class="btn btn-outline-primary">anterior</button>
+                <button id="btn-next-point" type="button" class="btn btn-outline-primary">próximo</button>
+            </div>
+        </li>
+
+        <h3 class="w3-bar-item">ALTERAR EXIBIÇÃO</h3>
+        <li class="list-group-item">
+            <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                <input type="checkbox" class="btn-check" id="btn-show-curves" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btn-show-curves">Curvas</label>
+
+                <input type="checkbox" class="btn-check" id="btn-show-points" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btn-show-points">Pontos</label>
+
+                <input type="checkbox" class="btn-check" id="btn-show-polygonal" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btn-show-polygonal">Poligonais</label>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <input id="evaluations" type="text" class="form-control" placeholder="Numero de avaliações" style="width: 100%;">
+        </li>
+    </div>
+
+    <!-- Page Content -->
+    <div style="margin-left:25%">
+
+        <div class="w3-container w3-teal">
+            <h1>Bezier, the Blessing</h1>
+        </div>
+
+        <div class="w3-container">
+            <div style=" background-color: black; ">
+                <canvas id="canvas " width="1000px " height="500px; "></canvas>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
