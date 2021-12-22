@@ -167,7 +167,7 @@ canvas.addEventListener('mouseup', function(event) {
 
 // curve buttons event listeners
 createNewCurveButton.addEventListener('click', function(event) {
-    if (selectedCurve === -1 || curves[selectedCurve] ? .length > 1) {
+    if (selectedCurve === -1 || curves[selectedCurve]?.length > 1) {
         canvasState = 1
         const newCurve = []
         curves.push(newCurve)
