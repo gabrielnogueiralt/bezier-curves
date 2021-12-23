@@ -6,15 +6,28 @@
   <link rel="stylesheet" href="main.css" />
 
   <body>
-
-    <!-- Sidebar -->
-    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
-        <h3 class="w3-bar-item">GERENCIAR CURVAS</h3>
-        <li class="list-group-item">
-            <div class="btn-group" role="group" aria-label="Basic mixed styles example" style="width: 100%;">
-                <button id="btn-delete-curve" type="button" class="btn btn-danger">remover</button>
-                <button id="btn-create-curve" type="button" class="btn btn-success">adicionar</button>
-            </div>
+    <!-- Menu -->
+    <div class="w3-container w3-teal">
+      <h1>Bezier Curves</h1>
+    </div>
+    <div class="options">
+      <h2 style="margin: 0 1rem 0 0;">Options</h2>
+      <h3 class="w3-bar-item" style="margin: 0 1rem;">Curves</h3>
+      <ul>
+        <li class="list-group-item" style="margin-bottom: 1rem">
+          <div
+            class="btn-group"
+            role="group"
+            aria-label="Basic mixed styles example"
+            style="width: 100%"
+          >
+            <button id="btn-delete-curve" type="button" class="button-box">
+              remove
+            </button>
+            <button id="btn-create-curve" type="button" class="button-box">
+              add
+            </button>
+          </div>
         </li>
         <li class="list-group-item" style="margin-bottom: 1rem">
           <div
