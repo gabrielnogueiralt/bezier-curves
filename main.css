@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.options {
+  display: flex;
+  margin: 2rem;
+}
+
+canvas {
+  display: block;
+  background: black;
+  margin: auto;
+  border: 5px outset rgb(47, 150, 137);
+}
+
+.content {
+  margin-bottom: 100px;
+}
+
+.list-group-item .list-item {
+  margin-bottom: 1rem;
+}
+
+.input-evaluations {
+  padding: 1rem;
+}
+
+.button-box {
+  background-color: #2F9689;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
