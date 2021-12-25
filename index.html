@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <title>Bezier, the blessing</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-menu">
+            <div class="top-left-menu">
+                <h2>Bezier, the blessing</h2>
+            </div>
+            <div class="bottom-left-menu">
+                <h3 class="w3-bar-item">Curves</h3>
+                <ul>
+                    <li class="list-group-item" style="margin-bottom: 1rem">
+                        <div class="btn-group" role="group" aria-label="Basic mixed styles example" style="width: 100%">
+                            <button id="btn-delete-curve" type="button" class="button-box">
+                      -
+                    </button>
+                            <button id="btn-create-curve" type="button" class="button-box">
+                      +
+                    </button>
+                        </div>
+                    </li>
+                    <li class="list-group-item" style="margin-bottom: 1rem">
+                        <div class="btn-group" role="group" aria-label="Basic outlined example" style="width: 100%">
+                            <button id="btn-previous-curve" type="button" class="button-box">
+                      <
+                    </button>
+                            <button id="btn-next-curve" type="button" class="button-box">
+                      >
+                    </button>
+                        </div>
+                    </li>
+                </ul>
+
+                <h3 class="w3-bar-item" style="margin: 0 1rem;">Points</h3>
+                <ul>
+                    <li class="list-group-item" style="margin-bottom: 1rem">
+                        <div class="btn-group" role="group" aria-label="Basic mixed styles example" style="width: 100%">
+                            <button id="btn-delete-point" type="button" class="button-box">
+                      -
+                    </button>
+                            <button id="btn-edit-point" type="button" class="button-box">
+                      edit
+                    </button>
+                            <button id="btn-create-point" type="button" class="button-box">
+                      +
+                    </button>
+                        </div>
+                    </li>
+                    <li class="list-group-item" style="margin-bottom: 1rem">
+                        <div class="btn-group" role="group" aria-label="Basic outlined example" style="width: 100%">
+                            <button id="btn-previous-point" type="button" class="button-box">
+                      <
+                    </button>
+                            <button id="btn-next-point" type="button" class="button-box">
+                      >
+                    </button>
+                        </div>
+                    </li>
+                </ul>
+
+                <h3 class="w3-bar-item" style="margin: 0 1rem;">Hide items</h3>
+                <ul>
+                    <li class="list-group-item" style="margin-bottom: 1rem">
+                        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                            <input type="checkbox" class="btn-check" id="btn-show-curves" autocomplete="off" />
+                            <label class="btn btn-outline-primary" style="margin-right: 1rem" for="btn-show-curves">Curves</label
+                    >
+        
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-show-points"
+                      autocomplete="off"
+                    />
+                    <label
+                      class="btn btn-outline-primary"
+                      style="margin-right: 1rem"
+                      for="btn-show-points"
+                      >Points</label
+                    >
+        
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-show-polygonal"
+                      autocomplete="off"
+                    />
+                    <label class="btn btn-outline-primary" for="btn-show-polygonal"
+                      >Polygonal</label
+                    >
+                  </div>
+                </li>
+                <li class="list-group-item" style="margin-bottom: 1rem">
+                  <input
+                    id="evaluations"
+                    type="text"
+                    class="input-evaluations"
+                    placeholder="Number of evaluations"
+                    style="width: 200px"
+                  />
+                </li>
+              </ul>
+            </div>
+        </div>
+        <main class="main">
+            <section class="section" id="about">
+                <div class="content">
+                    <canvas id="canvas" width="950" height="600"></canvas>
+                </div>
+                <script src="main.js"></script>
+            </section>
+        </main>
+    </div>
+
+</body>
+
+</html>

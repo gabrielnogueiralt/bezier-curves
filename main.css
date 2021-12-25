@@ -1,52 +1,90 @@
 * {
-  margin: 0;
-  padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: inherit;
 }
 
 html,
 body {
-  width: 100%;
-  height: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #E6E6E6;
 }
 
-ul {
-  list-style-type: none;
+.container {
+    display: flex;
 }
 
-.options {
-  display: flex;
-  margin: 2rem;
+.left-menu {
+    position: fixed;
+    box-sizing: border-box;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 100vh;
+    background-color: #14279B;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2rem;
+    color: white;
+}
+
+.top-left-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.bottom-left-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.main {
+    position: relative;
+    left: 25%;
+    margin: 1rem;
+    color: #00154f;
+    top: 0;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+}
+
+.section .section-content {
+    min-height: 90vh;
 }
 
 canvas {
-  display: block;
-  background: black;
-  margin: auto;
-  border: 5px outset rgb(47, 150, 137);
-}
-
-.content {
-  margin-bottom: 100px;
-}
-
-.list-group-item .list-item {
-  margin-bottom: 1rem;
-}
-
-.input-evaluations {
-  padding: 1rem;
+    display: block;
+    background: black;
+    margin: auto;
+    border: 5px outset rgb(47, 150, 137);
 }
 
 .button-box {
-  background-color: #2F9689;
-  border: none;
-  color: white;
-  border-radius: 8px;
-  padding: 10px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
+    background-color: #2F9689;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+li {
+    list-style-type: none;
+}
+
+.input-evaluations {
+    color: black;
 }
