@@ -22,48 +22,62 @@ function deCasteljau(points, t) {
     }
 }
 
-// Canvas
+/*
+Pega o canvas e suas propriedades e salva na var canvas.
+*/
 const canvas = document.getElementById('canvas')
 const context = canvas.getContext('2d')
 const rect = canvas.getBoundingClientRect();
 
-// Curve Buttons
+/*
+Opções das curvas
+*/
 const createNewCurveButton = document.getElementById('btn-create-curve')
 const deleteCurveButton = document.getElementById('btn-delete-curve')
 const nextCurveButton = document.getElementById('btn-next-curve')
 const previousCurveButton = document.getElementById('btn-previous-curve')
 
-// Point Buttons
+/*
+Opções dos botões
+*/
 const createNewPointButton = document.getElementById('btn-create-point')
 const deletePointButton = document.getElementById('btn-delete-point')
 const editPointButton = document.getElementById('btn-edit-point')
 const nextPointButton = document.getElementById('btn-next-point')
 const previousPointButton = document.getElementById('btn-previous-point')
 
-// Check Boxes buttons and input 
+/*
+Opções de controle
+-Mostrar curvas, polígonos, avaliações, etc.
+*/
 const checkBoxCurves = document.getElementById('btn-show-curves')
 const checkBoxPolygonal = document.getElementById('btn-show-polygonal')
 const checkBoxPoints = document.getElementById('btn-show-points')
 const evaluationsInput = document.getElementById('evaluations')
 
-// Aux variables
+/*
+Seção de variáveis auxiliares
+*/
 const POINT_RADIUS = 2
 
-// Curves and points
+//Array pra controlar quantidade de curvas, ponto selecionado atualmente e curva selecionada.
 const curves = []
 var selectedCurve = -1
 var selectedPoint = []
 selectedPoint.push(0)
 var evaluationsNumber = 100
 
-// Canvas status control
-var canvasState = 0 // 1 - adding; 2 - replacing
+/*
+Variáveis de controle
+*/
+// Se o state for 1 - ele vai adicionar um ponto, se for 2 vai modificar o ponto
+var canvasState = 0
 var click = false
 var apparentPoints = true
 var apparentPolygonal = true
 var apparentCurves = true
 
-// Draw functions
+//Funções pra desenhar pontos, linhas, polígonos, curvas de bezier e redesenhar as curvas quando houver alterações.
 function drawPoint(pointA) {
     context.beginPath()
     context.arc(pointA.x, pointA.y, POINT_RADIUS, 0, 2 * Math.PI)
@@ -132,7 +146,7 @@ function reDraw() {
     }
 }
 
-// canvas event listeners
+// Listeners
 canvas.addEventListener('mousedown', function(event) {
     click = true
     const elementRelativeX = event.clientX - rect.left;
@@ -147,6 +161,7 @@ canvas.addEventListener('mousedown', function(event) {
     }
     reDraw()
 })
+
 canvas.addEventListener('mousemove', function(event) {
     if (click) {
         if (canvasState === 2) {
@@ -160,12 +175,12 @@ canvas.addEventListener('mousemove', function(event) {
     }
     reDraw()
 })
+
 canvas.addEventListener('mouseup', function(event) {
     click = false
     reDraw()
 })
 
-// curve buttons event listeners
 createNewCurveButton.addEventListener('click', function(event) {
     if (selectedCurve === -1 || curves[selectedCurve]?.length > 1) {
         canvasState = 1
@@ -175,6 +190,7 @@ createNewCurveButton.addEventListener('click', function(event) {
         selectedCurve++
     }
 })
+
 deleteCurveButton.addEventListener('click', function(event) {
     if (curves.length > 0) {
         curves.splice(selectedCurve, 1)
@@ -185,12 +201,14 @@ deleteCurveButton.addEventListener('click', function(event) {
         reDraw()
     }
 })
+
 nextCurveButton.addEventListener('click', function(event) {
     if (selectedCurve < curves.length - 1) {
         selectedCurve++
         reDraw()
     }
 })
+
 previousCurveButton.addEventListener('click', function(event) {
     if (selectedCurve > 0) {
         selectedCurve--
@@ -198,10 +216,10 @@ previousCurveButton.addEventListener('click', function(event) {
     }
 })
 
-// point buttons event listeners
 createNewPointButton.addEventListener('click', function(event) {
     canvasState = 1
 })
+
 deletePointButton.addEventListener('click', function(event) {
     if (curves[selectedCurve].length > 0) {
         curves[selectedCurve].splice(selectedPoint[selectedCurve], 1)
@@ -218,15 +236,18 @@ deletePointButton.addEventListener('click', function(event) {
         reDraw()
     }
 })
+
 editPointButton.addEventListener('click', function(event) {
     canvasState = 2
 })
+
 nextPointButton.addEventListener('click', function(event) {
     if (selectedPoint[selectedCurve] < curves[selectedCurve].length - 1) {
         selectedPoint[selectedCurve]++
             reDraw()
     }
 })
+
 previousPointButton.addEventListener('click', function(event) {
     if (selectedPoint[selectedCurve] > 0) {
         selectedPoint[selectedCurve]--
@@ -234,21 +255,21 @@ previousPointButton.addEventListener('click', function(event) {
     }
 })
 
-// check box event listeners
 checkBoxCurves.addEventListener('click', function(event) {
     apparentCurves = !apparentCurves
     reDraw()
 })
+
 checkBoxPolygonal.addEventListener('click', function(event) {
     apparentPolygonal = !apparentPolygonal
     reDraw()
 })
+
 checkBoxPoints.addEventListener('click', function(event) {
     apparentPoints = !apparentPoints
     reDraw()
 })
 
-// evaluations event listener
 evaluationsInput.addEventListener('keyup', function(event) {
     const input = event.target.value
     evaluationsNumber = parseInt(input)
