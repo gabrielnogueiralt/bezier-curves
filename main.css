@@ -22,11 +22,11 @@ body {
     flex-direction: column;
     width: 25%;
     height: 100vh;
-    background-color: #14279B;
+    background-color: #5C7AEA;
     align-items: center;
     justify-content: space-around;
     padding: 2rem;
-    color: white;
+    color: #E6E6E6;
 }
 
 .top-left-menu {
@@ -64,13 +64,13 @@ canvas {
     display: block;
     background: black;
     margin: auto;
-    border: 5px outset rgb(47, 150, 137);
+    border: 5px outset rgb(20, 39, 155);
 }
 
 .button-box {
-    background-color: #2F9689;
+    background-color: #14279B;
     border: none;
-    color: white;
+    color: #E6E6E6;
     border-radius: 8px;
     padding: 10px 25px;
     text-align: center;
@@ -81,7 +81,8 @@ canvas {
     cursor: pointer;
 }
 
-li {
+ul {
+    padding: 0;
     list-style-type: none;
 }
 
