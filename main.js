@@ -1,27 +1,3 @@
-class Point {
-    constructor(x, y) {
-        this.x = x
-        this.y = y
-    }
-}
-
-function interpolation(pointA, pointB, t) {
-    return new Point(pointA.x * (1 - t) + pointB.x * t, pointA.y * (1 - t) + pointB.y * t)
-}
-
-function deCasteljau(points, t) {
-    const grade = points.length - 1
-    if (grade === 1) {
-        return interpolation(points[0], points[1], t)
-    } else {
-        const auxPoints = []
-        for (let i = 0; i < grade; i++) {
-            auxPoints.push(interpolation(points[i], points[i + 1], t))
-        }
-        return deCasteljau(auxPoints, t)
-    }
-}
-
 /*
 Pega o canvas e suas propriedades e salva na var canvas.
 */
@@ -65,7 +41,7 @@ const curves = []
 var selectedCurve = -1
 var selectedPoint = []
 selectedPoint.push(0)
-var evaluationsNumber = 100
+var evaluationsNumber = 100 //Controla a quantidade de pontos avaliados na reta
 
 /*
 Variáveis de controle
@@ -76,6 +52,29 @@ var click = false
 var apparentPoints = true
 var apparentPolygonal = true
 var apparentCurves = true
+
+class Point {
+    constructor(x, y) {
+        this.x = x
+        this.y = y
+    }
+}
+
+function interpolation(pointA, pointB, t) {
+    return new Point(pointA.x * (1 - t) + pointB.x * t, pointA.y * (1 - t) + pointB.y * t)
+}
+
+function deCasteljau(points, t) {
+    const grade = points.length - 1
+    if (grade === 1) {
+        return interpolation(points[0], points[1], t)
+    }
+    const auxPoints = []
+    for (let i = 0; i < grade; i++) {
+        auxPoints.push(interpolation(points[i], points[i + 1], t))
+    }
+    return deCasteljau(auxPoints, t)
+}
 
 //Funções pra desenhar pontos, linhas, polígonos, curvas de bezier e redesenhar as curvas quando houver alterações.
 function drawPoint(pointA) {
