@@ -31,12 +31,6 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 - [CSS]
 - [Javascript]
 
-## :heavy_check_mark: :computer: Tela de login
-
-<h1 align="center">
-    <img alt="Web" src=".github/login.png" width="400px">
-</h1>
-
 ## :heavy_check_mark: :computer: Aplicação
 
 <h1 align="center">
